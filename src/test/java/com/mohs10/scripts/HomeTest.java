@@ -17,12 +17,13 @@ import com.mohs10.reuse.CommonFuns;
 	}
 	
 	
-	/*@Test
+	@Test
 	public void RegisterPageTestCase() throws Exception {
 		CommonFuns hm = new CommonFuns();
 			  hm.Register("Misti", "Kohli", "manikoli@hotmail.com", "Tesla@4443", "Tesla@4443");
-			  Thread.sleep(7000);   */
+			  Thread.sleep(7000);   
 			 
 		  }
+	}
 	
 	

@@ -29,7 +29,7 @@ public class HomePage {
 
 
 	//To Register
-/*	public static By lnkRegister = By.xpath("//a[@href=\"/register\"]");
+	public static By lnkRegister = By.xpath("//a[@href=\"/register\"]");
 	public static By rbGender = By.id("gender-female");
 	public static By txtFirstname = By.id("FirstName");
 	public static By txtLastname = By.id("LastName");
@@ -37,7 +37,7 @@ public class HomePage {
 	public static By txtPassword = By.id("Password");
 	public static By txtConfirmpassword = By.id("ConfirmPassword");
 	public static By btnRegister = By.id("register-button");
-	public static By btnContinue = By.xpath("//input[@value='Continue']");*/
+	public static By btnContinue = By.xpath("//input[@value='Continue']");
 }    
 
 	

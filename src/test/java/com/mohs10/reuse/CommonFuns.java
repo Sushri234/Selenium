@@ -19,7 +19,7 @@ import com.mohs10.or.HomePage;
 		}
 		
 		// Registration process
-			/*	public void Register(String Firstname, String Lastname, String Email, String Pwd, String ConfirmPwd) throws Exception
+				public void Register(String Firstname, String Lastname, String Email, String Pwd, String ConfirmPwd) throws Exception
 				{
 					StartBrowser.childTest = StartBrowser.parentTest.createNode("Register in DemoWeb shop");
 					aDriver.navigateToApplication("http://demowebshop.tricentis.com/");
@@ -32,7 +32,7 @@ import com.mohs10.or.HomePage;
 					aDriver.type(HomePage.txtConfirmpassword, ConfirmPwd, "confirm password text box");
 					aDriver.click(HomePage.btnRegister, "Register button");
 					aDriver.click(HomePage.btnContinue, "Continue button");
-				} */
+				} 
 				
 
 
