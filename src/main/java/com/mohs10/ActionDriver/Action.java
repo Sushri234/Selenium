@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -24,6 +23,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.mohs10.base.StartBrowser;
+
+
 
 public class Action extends com.mohs10.base.StartBrowser{
 public WebDriver driver;
@@ -65,7 +66,8 @@ public void click(By locator, String eleName) throws Exception
 }
 
 
-	public void scrollByVisibilityOfElement(WebDriver driver, WebElement ele) {
+	public void scrollByVisibilityOfElement(WebDriver driver, WebElement ele)
+	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", ele);
 
@@ -829,6 +831,7 @@ public void click(By locator, String eleName) throws Exception
 			throw e;
 		}
 	}
+	
 	
 
 }

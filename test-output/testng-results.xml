@@ -1,69 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-29T16:59:21 IST" name="Default suite" finished-at="2023-03-29T17:00:02 IST" duration-ms="41253">
+  <suite started-at="2023-06-01T16:48:15 IST" name="Default suite" finished-at="2023-06-01T16:48:49 IST" duration-ms="34187">
     <groups>
     </groups>
-    <test started-at="2023-03-29T16:59:21 IST" name="Default test" finished-at="2023-03-29T17:00:02 IST" duration-ms="41253">
+    <test started-at="2023-06-01T16:48:15 IST" name="Default test" finished-at="2023-06-01T16:48:49 IST" duration-ms="34187">
       <class name="com.mohs10.scripts.HomeTest">
-        <test-method is-config="true" signature="generateReport()[pri:0, instance:com.mohs10.scripts.HomeTest@6fd83fc1]" started-at="2023-03-29T16:59:21 IST" name="generateReport" finished-at="2023-03-29T16:59:22 IST" duration-ms="621" status="PASS">
+        <test-method is-config="true" signature="generateReport()[pri:0, instance:com.mohs10.scripts.HomeTest@a38c7fe]" started-at="2023-06-01T16:48:15 IST" name="generateReport" finished-at="2023-06-01T16:48:16 IST" duration-ms="774" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateReport -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.mohs10.scripts.HomeTest@6fd83fc1]" started-at="2023-03-29T16:59:22 IST" name="beforeClass" finished-at="2023-03-29T16:59:24 IST" duration-ms="2577" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.mohs10.scripts.HomeTest@a38c7fe]" started-at="2023-06-01T16:48:16 IST" name="beforeClass" finished-at="2023-06-01T16:48:20 IST" duration-ms="3879" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="methodName(java.lang.reflect.Method)[pri:0, instance:com.mohs10.scripts.HomeTest@6fd83fc1]" started-at="2023-03-29T16:59:24 IST" name="methodName" finished-at="2023-03-29T16:59:25 IST" duration-ms="135" status="PASS">
+        <test-method is-config="true" signature="methodName(java.lang.reflect.Method)[pri:0, instance:com.mohs10.scripts.HomeTest@a38c7fe]" started-at="2023-06-01T16:48:20 IST" name="methodName" finished-at="2023-06-01T16:48:20 IST" duration-ms="13" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.mohs10.scripts.HomeTest.CategoriesTest() throws java.lang.Exception]]>
+                <![CDATA[public void com.mohs10.scripts.HomeTest.Showcase_series() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- methodName -->
-        <test-method signature="CategoriesTest()[pri:0, instance:com.mohs10.scripts.HomeTest@6fd83fc1]" started-at="2023-03-29T16:59:25 IST" name="CategoriesTest" finished-at="2023-03-29T16:59:47 IST" duration-ms="22840" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CategoriesTest -->
-        <test-method is-config="true" signature="methodName(java.lang.reflect.Method)[pri:0, instance:com.mohs10.scripts.HomeTest@6fd83fc1]" started-at="2023-03-29T16:59:47 IST" name="methodName" finished-at="2023-03-29T16:59:47 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.mohs10.scripts.HomeTest.RegisterPageTestCase() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- methodName -->
-        <test-method signature="RegisterPageTestCase()[pri:0, instance:com.mohs10.scripts.HomeTest@6fd83fc1]" started-at="2023-03-29T16:59:47 IST" name="RegisterPageTestCase" finished-at="2023-03-29T17:00:02 IST" duration-ms="14275" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="Showcase_series()[pri:0, instance:com.mohs10.scripts.HomeTest@a38c7fe]" started-at="2023-06-01T16:48:20 IST" name="Showcase_series" finished-at="2023-06-01T16:48:47 IST" duration-ms="27722" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@value='Continue']"}
-  (Session info: chrome=111.0.5563.111)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[unknown error: cannot determine loading status
+from no such window
+  (Session info: chrome=113.0.5672.127)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7GC1PIP', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+System info: host: 'DESKTOP-7GC1PIP', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:31407}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8662acd7bb7abf968522f4bc2954c041
-*** Element info: {Using=xpath, value=//input[@value='Continue']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:1492}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2f473f7df932eab81b1c3684eeabec29]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@value='Continue']"}
-  (Session info: chrome=111.0.5563.111)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from no such window
+  (Session info: chrome=113.0.5672.127)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-7GC1PIP', ip: '192.168.1.102', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
+System info: host: 'DESKTOP-7GC1PIP', ip: '192.168.1.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.111, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:31407}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8662acd7bb7abf968522f4bc2954c041
-*** Element info: {Using=xpath, value=//input[@value='Continue']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\DELL\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:1492}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2f473f7df932eab81b1c3684eeabec29
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -74,13 +57,10 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.mohs10.ActionDriver.Action.click(Action.java:57)
-at com.mohs10.reuse.CommonFuns.Register(CommonFuns.java:34)
-at com.mohs10.scripts.HomeTest.RegisterPageTestCase(HomeTest.java:23)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.back(RemoteWebDriver.java:849)
+at com.mohs10.reuse.CommonFuns.ShowCaseSeries_Youtube(CommonFuns.java:263)
+at com.mohs10.scripts.HomeTest.Showcase_series(HomeTest.java:64)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,11 +91,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RegisterPageTestCase -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.mohs10.scripts.HomeTest@6fd83fc1]" started-at="2023-03-29T17:00:02 IST" name="afterClass" finished-at="2023-03-29T17:00:02 IST" duration-ms="762" status="PASS">
+        </test-method> <!-- Showcase_series -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.mohs10.scripts.HomeTest@a38c7fe]" started-at="2023-06-01T16:48:47 IST" name="afterClass" finished-at="2023-06-01T16:48:49 IST" duration-ms="1749" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

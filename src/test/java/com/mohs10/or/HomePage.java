@@ -1,43 +1,85 @@
 package com.mohs10.or;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import com.github.dockerjava.api.model.Driver;
 
 public class HomePage {
 	
-	//Categories
+	//Footer TestCases
+
+    public static By Linkdln_logo = By.xpath("//i[@class=\"fab fa-linkedin\"]");
+	public static By Youtube_logo  =By.xpath("//i[@class='fab fa-youtube']");
+	public static By insta_logo =By.xpath("//a[@class=\"elementor-icon elementor-social-icon elementor-social-icon- elementor-repeater-item-954c7a8\"]");
+	public static By Twitter_logo =By.xpath("//i[@class='fab fa-twitter']");
+	
+	
+	//Validate Mohs10Logo and ThankyouEmail	
+	public static By Mohs10_Logo = By.xpath("//a[normalize-space()='Mohs10 Technologies']");
+	
+	public static By Automation_forum =By.xpath("//a[normalize-space()='info@testautomationforum.com']");
+	public static By OK =By.xpath("//input[@id='ff_3_email']");
+	
+	public static By Email =By.xpath("//input[@id='ff_3_email']");
+	public static By submit =By.xpath("//button[normalize-space()='Submit']");
+	public static By thankYouMessage =By.xpath("//p[contains(text(),'Thank you for contacting us. We will get in touch ')]");
+	
+	
+	//Search Functionality
+	public static By Keyword =By.xpath("//input[@title='Search']");
+	public static By Search =By.xpath("//i[@class='fas fa-search']");
+	
+	public static By Read_Link =By.xpath("//p[@class='read-more']//a[@href='https://testautomationforum.com/optimizing-performance-of-your-e-commerce-apps-to-ensure-seamless-customer-experience/']");
+	public static By Scroll =By.xpath("//p[16]//b[1]//span[1]");
+	public static By Conclusion =By.xpath("//p[16]//b[1]//span[1]");
+	
+	public static By Like_button= By.xpath("//button[@aria-label='Like Button']");
+	
+	public static By Search1 =By.xpath("//i[@class='fas fa-search']");
+	
+	
+	//ShowCase series page
+	
+	public static By Showcase =By.xpath("//a[normalize-space()='Showcase Series']");
+	public static By series1 =By.xpath("//img[@alt='Showcase Series � ContextQA']");
+	
+	
+	public static By series2 =By.xpath("//img[@alt='Showcase Series � Deepfactor']");
+	public static By series3 =By.xpath("//img[@alt='Showcase Series � Tonic']");
+	
+	public static By series4 =By.xpath("//img[@alt='Showcase Series � Conformiq']");
+	public static By series5 =By.xpath("//img[@alt='Showcase Series � Sahi Pro']");
+	
+	public static By series6 =By.xpath("//img[@alt='Showcase Series � Leapwork']");
+	public static By series7 =By.xpath("//img[@alt='Showcase Series � Avo Automation']");
+	
+	public static By series8 =By.xpath("//img[@alt='Showcase Series � AccelQ']");
+	public static By series9 =By.xpath("//img[@alt='Showcase Series � Lambdatest']");
+	
+	public static By series10 =By.xpath("//img[@alt='Showcase Series � Froglogic Squish']");
+	public static By series11 =By.xpath("//img[@alt='Showcase Series � Testing-Whiz']");
+	
+	public static By series12 =By.xpath("//img[@alt='Showcase Series � SeaLights']");
+	public static By series13 =By.xpath("//img[@alt='Showcase Series � AIEnsured']");
+	
+	public static By series14 =By.xpath("//img[@alt='Showcase Series � Simplify3x']");
+	public static By series15 =By.xpath("//img[@alt='Showcase Series � Qase.io']");
+	
+	//YouTube click and pause action in show case series
+	
+	public static By Showcase_YT =By.xpath("//a[normalize-space()='Showcase Series']");
+	public static By Video1 =By.xpath("//img[@alt='Showcase Series – ContextQA']");
+
+	public static By Video2 =By.xpath("//img[@alt='Showcase Series – Deepfactor']");
+	public static By Video3 =By.xpath("//img[@alt='Showcase Series – Tonic']");
+
+	
+	
+}
 
 
-/*	public static By Jewelry = By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[6]/a");
-	public static By chooseJewelry = By.xpath("//div[@class='product-item']//img[@title='Show details for Create Your Own Jewelry']");
-	public static By addtocartJewelry = By.xpath("//input[@id='add-to-cart-button-71']");
-	public static By addlength=By.xpath("//input[@id='product_attribute_71_10_16']"); */
-	
-	public static By books = By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[1]/a");
-	public static By book =By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div[1]/a/img");
-	public static By addtocart =By.id("add-to-cart-button-13") ;
-	public static By compareproduct =By.xpath("//input[@class=\"button-2 add-to-compare-list-button\"]");
-	
-	public static By computers =By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[2]/a");
-	public static By computer =By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[1]/div[2]/div/div/a/img");
-	public static By addtocart2 =By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[3]/div/div/div[1]/a/img");
-	public static By clickoncart =By.xpath("//*[@id=\"add-to-cart-button-31\"]");
-	public static By compare =By.xpath("//*[@id=\"product-details-form\"]/div/div[1]/div[2]/div[8]/input");
-	
-	public static By remove =By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/table/tbody/tr[1]/td[3]/div/p[1]/input");
-	
-	
 
 
-	//To Register
-	public static By lnkRegister = By.xpath("//a[@href=\"/register\"]");
-	public static By rbGender = By.id("gender-female");
-	public static By txtFirstname = By.id("FirstName");
-	public static By txtLastname = By.id("LastName");
-	public static By txtEmail = By.id("Email");
-	public static By txtPassword = By.id("Password");
-	public static By txtConfirmpassword = By.id("ConfirmPassword");
-	public static By btnRegister = By.id("register-button");
-	public static By btnContinue = By.xpath("//input[@value='Continue']");
-}    
 
 	
