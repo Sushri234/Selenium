@@ -201,11 +201,20 @@ if (thankYouMessage.isDisplayed()) {
 //Scroll down method
 public void Scroll_down(By scroll1) throws FindFailed, InterruptedException
 {
-WebElement scrool= driver.findElement(scroll1);
+WebElement scroll= driver.findElement(scroll1);
 JavascriptExecutor js = (JavascriptExecutor) driver;
-js.executeScript("arguments[0].scrollIntoView();", scrool);
+js.executeScript("arguments[0].scrollIntoView();", scroll);
 
 
 }
+
+
+
+
+
+public String getTitle() {
+	// TODO Auto-generated method stub
+	return null;
 }
 
+}

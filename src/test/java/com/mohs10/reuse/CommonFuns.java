@@ -1,6 +1,8 @@
 package com.mohs10.reuse;
 
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -30,79 +32,64 @@ import com.mohs10.ActionDriver.XLUtils;
 		}
 		
 		
-		
+		String excelfile="C:\\Users\\DELL\\eclipse-workspace\\Mohs10_TAF\\TestData\\Taf_data.xlsx";
+		String excelsheet= "Sheet2";
 		
 	//******************************** Footer TestCases***********************************
 		   
-/*			public void Title_validate() throws Exception
+			public void Title_validate(String URL) throws Exception
 				{
 					StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate the title of all page");
-					aDriver.navigateToApplication("https://testautomationforum.com/");
+					aDriver.navigateToApplication(URL);
 					
-					aDriver.click(HomePage.Linkdln_logo, "Click on Linkdlnlogo");
-					
-					Set<String> windowHandles = driver.getWindowHandles();
-					// Store the handle of the parent window
-					String parentWindowHandle = driver.getWindowHandle();
-					// Iterate through the window handles to switch to the child window
-					for (String windowHandle : windowHandles) {
-					    if (!windowHandle.equals(parentWindowHandle)) {
-					        driver.switchTo().window(windowHandle);
-					        break;
-					    }
-					}
-					// Perform actions on the child window
-					
-                    aDriver.switchToNewWindow(driver);
-					aaDriver.Title_validate(driver, "Test Automation Forum (TAF) | LinkedIn");
-				    Thread.sleep(3000);
-					driver.close();
+					int rowcount = XLUtils.getRowCount(excelfile, excelsheet);
+	                System.out.println(rowcount);
+	                List<By> Show_page = Arrays.asList(HomePage.Linkdln_logo, HomePage.Youtube_logo, HomePage.insta_logo, HomePage.Twitter_logo);
 
-					// Switch back to the parent window
-					driver.switchTo().window(parentWindowHandle);
-					System.out.println("go to parent window");
-					
-					
-					 aDriver.click(HomePage.Youtube_logo, "Click on Youtubelogo");
-					 aDriver.switchToNewWindow(driver);
-                     aaDriver.Title_validate(driver,"Test Automation Forum (TAF) - YouTube");
-                     Thread.sleep(3000);
- 				     driver.close();
-					  
- 				  //Switch back to the parent window
- 		       	    driver.switchTo().window(parentWindowHandle);
- 					System.out.println("go to parent window");
-					 
-				    aDriver.click(HomePage.insta_logo, "click on insta logo");
-					aDriver.switchToNewWindow(driver);
-					//aaDriver.Title_validate(driver,"Page not found • Instagram");
-					aaDriver.Title_validate(driver,"Test Automation Forum (TAF) (@test_automation_forum) on Instagram");
-					Thread.sleep(3000); driver.close();
-					  
-					// Switch back to the parent window
-					driver.switchTo().window(parentWindowHandle);
-					System.out.println("go to parent window");
-					 
-		 			aDriver.click(HomePage.Twitter_logo, "click on Twitter logo");
-				    aDriver.switchToNewWindow(driver);
-		            aaDriver.Title_validate(driver,"Test Automation Forum (@Testautoforum) / Twitter");
-		            Thread.sleep(3000);
-		 		    driver.close();    
-				}  
-				}  */
+	                for(int i=0;i<=3;i++) {
+	               	                
+	                String title = XLUtils.getStringCellData(excelfile, excelsheet, i, 0);
+					System.out.println(title);
+					aDriver.click(Show_page.get(i), "Click on " + title);
+                        //Window handle method
+				        Set<String> windowHandles = driver.getWindowHandles();
+				        // Store the handle of the parent window
+				        String parentWindowHandle = driver.getWindowHandle();
+				        // Iterate through the window handles to switch to the child window
+				        for (String windowHandle : windowHandles) {
+				            if (!windowHandle.equals(parentWindowHandle)) {
+				                driver.switchTo().window(windowHandle);
+				                break;
+				                }
+				        }
+				        // Perform actions on the child window
+				        aDriver.switchToNewWindow(driver);
+				        aaDriver.Title_validate(driver, title);
+				        Thread.sleep(3000);
+				        driver.close();
+				        // Switch back to the parent window
+				        driver.switchTo().window(parentWindowHandle);
+				        }
+	                    driver.quit();
+				        }
+			
 	
    //**************************************** Validate Mohs10Logo and ThankyouEmail***********************************	
-			/*	public String Validate_EmailAndLogo(String Email) throws Exception
+				public boolean Validate_Logo(String URL) throws Exception
 				{
-					StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate Email & Mohs10Logo");
-					aDriver.navigateToApplication("https://testautomationforum.com/");
+					StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate Mohs10Logo");
+					aDriver.navigateToApplication(URL);
 					
-					aDriver.click(HomePage.Mohs10_Logo, "Click on M10 logo");
+					aDriver.click(HomePage.Mohs10_Link, "Click on M10 Technologies");
+					WebElement logo=driver.findElement(HomePage.Mohs10_Logo);
+					boolean logodisplayed = logo.isDisplayed();
 					Thread.sleep(3000);
-					driver.navigate().back();
-					Thread.sleep(3000);
-					aDriver.click(HomePage.Automation_forum, "Click on forum");
-					aDriver.click(HomePage.OK, "Click on cancel");
+					return logodisplayed;
+				}
+				public String Validate_Email(String Email, String URL) throws Exception
+				{
+				    StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate Email & Mohs10Logo");
+					aDriver.navigateToApplication(URL);
 					
 		 			aDriver.type(HomePage.Email,Email, "type your mail id");
 					aDriver.click(HomePage.submit, "Click on submit button");
@@ -111,201 +98,106 @@ import com.mohs10.ActionDriver.XLUtils;
 					
 				        }
 					
-				}   */
+	
 				
 //************************************Search functionality*********************************
 				
-		/*		public String Search_functionality(String Keyword) throws Exception
-				{
-					StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate Keyword and read_link");
-					aDriver.navigateToApplication("https://testautomationforum.com/");
-				//Click on search button by entering a keyword
-					aDriver.type(HomePage.Keyword,Keyword, "write one keyword");
-					aDriver.click(HomePage.Search, "search for this keyword");
-					aaDriver.Title_validate(driver,"You searched for Performance - Test Automation Forum");
-		            Thread.sleep(3000);
-		            driver.navigate().back();
-					
-		            aDriver.click(HomePage.Read_Link, "click on read link");
-		         //Scroll Down
-		            aaDriver.Scroll_down(HomePage.Scroll);
-		            
-					String conclusion=aDriver.getText(HomePage.Conclusion, "Conclusion Text");
-					
-					aDriver.click(HomePage.Like_button, "click on read link");
-					System.out.println("Thanks you! Liked this");
-					driver.navigate().back();
-					driver.navigate().back();
-					driver.navigate().refresh(); 
-				//Click on search button without entering anything
-					aDriver.click(HomePage.Search1, "Search for keyword");
-					
-					return conclusion;
-				}
-	}	*/
+		public String Validate_keyword(String Keyword, String URL) throws Exception {
+			StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate Keyword");
+			aDriver.navigateToApplication(URL);
+			// Click on search button by entering a keyword
+			aDriver.type(HomePage.Keyword, Keyword, "write one keyword");
+			aDriver.click(HomePage.Search, "search for this keyword");
+			//Validate the headings of search keyword
+			String headings= aDriver.getText(HomePage.Heading, "get the headings of the page");
+			//validate the title of search keyword
+			aaDriver.Title_validate(driver, "You searched for "+Keyword+" - Test Automation Forum");
+			Thread.sleep(3000);
+			return headings;
+		}
+		
+			public String Validate_Readlink(String URL) throws Exception {
+			StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate read_link");
+			aDriver.navigateToApplication(URL);
+			aDriver.click(HomePage.Read_Link, "click on read link");
+			// Scroll Down
+			aaDriver.Scroll_down(HomePage.Scroll);
+
+			String conclusion = aDriver.getText(HomePage.Conclusion, "Conclusion Text");
+
+			aDriver.click(HomePage.Like_button, "click on read link");
+			System.out.println("Thanks you! Liked this");
+			driver.navigate().back();
+			//driver.navigate().refresh();
+			Thread.sleep(3000);
+			// Click on search button without entering anything
+			aDriver.click(HomePage.Search1, "Search for keyword");
+
+			return conclusion;
+		}
+	
   //**************************************ShowCase series page***************************************
 					
-		        /*    public void Showcase_page() throws Exception
-				    {
-						StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate title of the ShowCase series page");
-						aDriver.navigateToApplication("https://testautomationforum.com/");
-						
-					    aDriver.click(HomePage.Showcase, "click on showcase series page");
-						aDriver.click(HomePage.series1, "Click on 1st series");
-						aaDriver.Title_validate(driver, "Test Automation Forum Showcase Series – ContextQA Showcase Series -");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series2, "Click on 2nd series");
-						aaDriver.Title_validate(driver, "Test Automation Forum Showcase Series – Deepfactor Showcase Series -");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series3, "Click on 3rd series");
-						aaDriver.Title_validate(driver, "Test Automation Forum Showcase Series – Tonic Showcase Series -");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series4, "Click on 4th series");
-						aaDriver.Title_validate(driver, "Test Automation Forum Showcase Series – Conformiq Showcase Series -");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series5, "Click on 5th series");
-						aaDriver.Title_validate(driver, "Showcase Series – Sahi Pro");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series6, "Click on 6th series");
-						aaDriver.Title_validate(driver, "Showcase Series – Leapwork");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series7, "Click on 7th series");
-						aaDriver.Title_validate(driver, "Showcase Series – Avo Automation");
-						driver.navigate().back();
-						
-						aDriver.click(HomePage.series8, "Click on 8th series");
-						aaDriver.Title_validate(driver, "Showcase Series – AccelQ");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series9, "Click on 9th series");
-						aaDriver.Title_validate(driver, "Showcase Series – Lambdatest");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series10, "Click on 10th series");
-						aaDriver.Title_validate(driver, "Showcase Series – Froglogic Squish");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series11, "Click on 11th series");
-						aaDriver.Title_validate(driver, "Showcase Series – Testing-Whiz");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series12, "Click on 12th series");
-						aaDriver.Title_validate(driver, "Showcase Series - SeaLights");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series13, "Click on 13th series");
-						aaDriver.Title_validate(driver, "Showcase Series - AIEnsured");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series14, "Click on 14th series");
-						aaDriver.Title_validate(driver, "Showcase Series - Test Automation Forum");
-						driver.navigate().back();
-						Thread.sleep(2000);
-						
-						aDriver.click(HomePage.series15, "Click on 15th series");
-						aaDriver.Title_validate(driver, "Showcase Series - Qase.io");
-					} 
-	          }*/
-		
-		
-      //********************************YouTube Video click and pause action in show case series************************
-		
-		 public void ShowCaseSeries_Youtube(String URL) throws Exception
-		  {
-		   StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate video for each Showcase series");
-		   aDriver.navigateToApplication("https://testautomationforum.com/");
-			
-		   aDriver.click(HomePage.Showcase_YT, "Click on 1st series");
-	    //1st Video
-		   aDriver.click(HomePage.Video1, "Click on 1st series");
-		   Thread.sleep(2000);
-		//It will scroll down to the page
-		   WebElement scrool= driver.findElement(By.xpath("//section[@class='elementor-section elementor-top-section elementor-element elementor-element-78bce02 elementor-section-boxed elementor-section-height-default elementor-section-height-default']"));
-		   JavascriptExecutor js = (JavascriptExecutor) driver;
-		   js.executeScript("arguments[0].scrollIntoView();", scrool);
-		
-		//create the object of screen class For Click operation on video
-            Screen screen = new Screen();
-		    Pattern play = new Pattern(URL);
-		
-		    screen.wait(play, 1000);
-		    screen.click(play);
+	  public void Showcase_page(String URL) throws Exception {
+		StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate title of the ShowCase series page");
+		aDriver.navigateToApplication(URL);
 
-		    Thread.sleep(5000);
-		    Actions actions = new Actions(driver);
-            // Move the mouse to the video element to make it visible
-		    actions.moveToElement(scrool).perform();
-            // Wait for the video to start playing
-		    Thread.sleep(2000);
-            // Pause the video
-		    actions.moveByOffset(0, 0).click().perform();
-		    Thread.sleep(3000);
+		List<By> Showcase_page = Arrays.asList(HomePage.series1, HomePage.series2, HomePage.series3, HomePage.series4,HomePage.series5,HomePage.series6,HomePage.series7,HomePage.series8,HomePage.series9,HomePage.series10,HomePage.series11,HomePage.series12,HomePage.series13,HomePage.series14,HomePage.series15);
+		for (By Showcase_series : Showcase_page) {
+		aDriver.click(HomePage.Showcase, "Click on 1st series");
+		aDriver.click(Showcase_series, "Click on each series of the page");
+		Thread.sleep(2000);
+        // Get the Title of each page
+		String expectedTitle = aDriver.getTitle(driver);
+
+		// Call the validation method from aaDriver to validate the title
+		aaDriver.Title_validate(driver, expectedTitle);
+	    Thread.sleep(2000);
+		driver.navigate().back();
+		Thread.sleep(2000);
+		}
+	}
+			
+		
+//*************************************YouTube Video click and pause action in show case series************************
 		    
-		//2nd Video 
-		    driver.navigate().back();
-		    Thread.sleep(2000);
-		    aDriver.click(HomePage.Video2, "Click on 1st series");
-			Thread.sleep(2000);
-		//It will scroll down to the page
-			WebElement scrool1= driver.findElement(By.xpath("//section[@class='elementor-section elementor-top-section elementor-element elementor-element-78bce02 elementor-section-boxed elementor-section-height-default elementor-section-height-default']"));
-			JavascriptExecutor js1 = (JavascriptExecutor) driver;
-			js1.executeScript("arguments[0].scrollIntoView();", scrool1);
-			
-			Pattern play1 = new Pattern(URL);
-			
-			screen.wait(play1, 1000);
-			screen.click(play1);
+	 public void ShowCaseSeries_Youtube( String URL,String SC_url) throws Exception {
+		StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate video for each Showcase series");
+		aDriver.navigateToApplication(URL);
 
-			Thread.sleep(5000);
-			Actions action1 = new Actions(driver);
-		    action1.moveToElement(scrool1).perform();
-		    Thread.sleep(2000);
-            // Pause the video
-		    actions.moveByOffset(0, 0).click().perform();
-		    Thread.sleep(3000);
-			    
-		 //3rd Video 
-			    driver.navigate().back();
-			    Thread.sleep(2000);
-			    aDriver.click(HomePage.Video3, "Click on 1st series");
-				Thread.sleep(2000);
-				
-				WebElement scrool2= driver.findElement(By.xpath("//section[@class='elementor-section elementor-top-section elementor-element elementor-element-78bce02 elementor-section-boxed elementor-section-height-default elementor-section-height-default']"));
-				JavascriptExecutor js2 = (JavascriptExecutor) driver;
-				js2.executeScript("arguments[0].scrollIntoView();", scrool2);
-				
-				Pattern play2 = new Pattern(URL);
-				
-				screen.wait(play2, 1000);
-				screen.click(play2);
+		// List of video elements
+		List<By> videoElements = Arrays.asList(HomePage.Video1,HomePage.Video2);
 
-				Thread.sleep(5000);
-				Actions action2 = new Actions(driver);
-				action2.moveToElement(scrool2).perform();
-				Thread.sleep(2000);
-		        // Pause the video
-				actions.moveByOffset(0, 0).click().perform();
-				Thread.sleep(3000);
-				    } 
-					   }
+		for (By videoElement : videoElements) {
+		aDriver.click(HomePage.Showcase_YT, "Click on 1st series");
+		aDriver.click(videoElement, "Click on video");
+		Thread.sleep(2000);
+
+		// Scroll down to the page
+	    WebElement scroll = driver.findElement(By.xpath("//section[@class='elementor-section elementor-top-section elementor-element elementor-element-78bce02 elementor-section-boxed elementor-section-height-default elementor-section-height-default']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", scroll);
+        
+        // Create the object of the Screen class for click operation on the video
+        Screen screen = new Screen();
+        Pattern play = new Pattern(SC_url);  //Here give the screenshot path of the element
+        screen.wait(play, 1000);
+        screen.click(play);
+        Thread.sleep(5000);
+        
+        //Mouse over Action to pause the video
+        Actions actions = new Actions(driver);
+        // Move the mouse to the video element to make it visible
+        actions.moveToElement(scroll).perform();
+        Thread.sleep(2000);
+        // Pause the video
+        actions.moveByOffset(0, 0).click().perform();
+        Thread.sleep(3000);
+	   }
+      }
+    }  
+		 
+				   
 			    
 		    
 		 
