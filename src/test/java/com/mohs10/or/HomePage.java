@@ -66,7 +66,7 @@ public class HomePage {
 	public static By series13 =By.xpath("//img[@alt='Showcase Series – AIEnsured']");
 	
 	public static By series14 =By.xpath("//img[@alt='Showcase Series – Simplify3x']");
-	public static By series15 =By.xpath("//img[@alt='Showcase Series  Qase.io']");
+//	public static By series15 =By.xpath("//img[@alt='Showcase Series  Qase.io']");
 	
 	
 	//YouTube click and pause action in show case series

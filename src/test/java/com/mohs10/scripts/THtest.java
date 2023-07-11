@@ -15,7 +15,7 @@ public class THtest extends StartBrowser {
     String excelsheet = "authorregs"; // Assuming the Excel sheet name is "Registration"
     String URL ="URL";
 
-    @Test
+    @Test(priority=0)
     public void Authorreg() throws Exception {
         Tcfuns hm2 = new Tcfuns();
         String url = XLUtils.getStringCellData(excelfile, URL,  1, 0);
@@ -38,7 +38,7 @@ public class THtest extends StartBrowser {
     
 //*********************************************************************//
     
-    @Test
+    @Test(priority=1)
     public void Authorval() throws Exception {
         Tcfuns hm2 = new Tcfuns();
         String url = XLUtils.getStringCellData(excelfile, URL,  1, 0);
@@ -58,7 +58,7 @@ public class THtest extends StartBrowser {
         Thread.sleep(5000);
 }
 //************************************************************************//
-    	@Test
+    	@Test(priority=2)
     	public void Articles() throws Exception{
     		String url = XLUtils.getStringCellData(excelfile, URL,  1, 0);
     		Tcfuns hm2= new Tcfuns();

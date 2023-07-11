@@ -12,7 +12,7 @@ import com.mohs10.reuse.CommonFuns;
 		String Sheet= "Sheet1";
 	
 	//***********************Footer TestCases********************
-	@Test
+	@Test(priority = 0)
 	public void Validate_title() throws Exception {
 	
 	    String URL= XLUtils.getStringCellData(Excelfile, Sheet, 2, 0);
@@ -23,7 +23,7 @@ import com.mohs10.reuse.CommonFuns;
 		
 	
 	//******************* Validate Mohs10Logo and ThankyouEmail**************** 
-/*	   @Test
+	   @Test(priority = 1)
 	   public void Validate_Logo() throws Exception {
 		 			
 		String URL= XLUtils.getStringCellData(Excelfile, Sheet, 2, 0);
@@ -32,8 +32,8 @@ import com.mohs10.reuse.CommonFuns;
 	    boolean logo=cat.Validate_Logo(URL);
 	    Assert.assertEquals(logo,true);
 		Thread.sleep(9000);    
-		} */ 
-	/*   @Test
+		} 
+	   @Test(priority = 2)
 	   public void Validate_Email() throws Exception {
 		 			
 		String URL= XLUtils.getStringCellData(Excelfile, Sheet, 2, 0);
@@ -43,11 +43,11 @@ import com.mohs10.reuse.CommonFuns;
 	    String text=cat.Validate_Email(Email, URL);
 	    Assert.assertEquals(text, "Thank you for contacting us. We will get in touch with you shortly.");
 		Thread.sleep(9000);    
-		}  */
+		}  
 	
 		
 	//*****************Search functionality******************8
-/*		@Test
+	   @Test(priority = 3)
 		public void Validate_Keyword() throws Exception {
 			CommonFuns cat = new CommonFuns();
 			
@@ -59,8 +59,8 @@ import com.mohs10.reuse.CommonFuns;
 		    System.out.println(heading);
 			Thread.sleep(9000);  
 	
- }   */
-		@Test
+ }   
+	   @Test(priority = 4)
 		public void Validate_readlink() throws Exception {
 			CommonFuns cat = new CommonFuns();
 			
@@ -75,7 +75,7 @@ import com.mohs10.reuse.CommonFuns;
 	
 		
 	//******************ShowCase series page*******************
-/*		@Test
+	   @Test(priority = 5)
 		public void Showcase_seriesPage() throws Exception {
 			
 			String URL= XLUtils.getStringCellData(Excelfile, Sheet, 2, 0);
@@ -83,11 +83,11 @@ import com.mohs10.reuse.CommonFuns;
 		    cat.Showcase_page(URL);
 			Thread.sleep(9000);  
 		
-	}*/	
+	}
 	
 	//******************YouTube Video click and pause**************
 	
-/*	  @Test 
+	   @Test(priority = 6)
 	  public void Showcase_series() throws Exception {
 		  
 		  String URL= XLUtils.getStringCellData(Excelfile, Sheet, 2, 0);
@@ -95,7 +95,7 @@ import com.mohs10.reuse.CommonFuns;
 		  CommonFuns cat = new CommonFuns();
 	      cat.ShowCaseSeries_Youtube(URL,SC_URL);
 	      Thread.sleep(2000);
-	  }*/
+	  }
 	 
 	
 }

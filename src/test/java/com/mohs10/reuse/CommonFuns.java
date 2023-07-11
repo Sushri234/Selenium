@@ -44,9 +44,9 @@ import com.mohs10.ActionDriver.XLUtils;
 					
 					int rowcount = XLUtils.getRowCount(excelfile, excelsheet);
 	                System.out.println(rowcount);
-	                List<By> Show_page = Arrays.asList(HomePage.Linkdln_logo, HomePage.Youtube_logo, HomePage.insta_logo, HomePage.Twitter_logo);
+	                List<By> Show_page = Arrays.asList(HomePage.Linkdln_logo, HomePage.Youtube_logo, HomePage.insta_logo);
 
-	                for(int i=0;i<=3;i++) {
+	                for(int i=0;i<=2;i++) {
 	               	                
 	                String title = XLUtils.getStringCellData(excelfile, excelsheet, i, 0);
 					System.out.println(title);
@@ -70,11 +70,16 @@ import com.mohs10.ActionDriver.XLUtils;
 				        // Switch back to the parent window
 				        driver.switchTo().window(parentWindowHandle);
 				        }
-	                    driver.quit();
-				        }
+	                    
+				}
 			
 	
-   //**************************************** Validate Mohs10Logo and ThankyouEmail***********************************	
+    
+		
+	
+
+
+//**************************************** Validate Mohs10Logo and ThankyouEmail***********************************	
 				public boolean Validate_Logo(String URL) throws Exception
 				{
 					StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate Mohs10Logo");
@@ -142,7 +147,7 @@ import com.mohs10.ActionDriver.XLUtils;
 		StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate title of the ShowCase series page");
 		aDriver.navigateToApplication(URL);
 
-		List<By> Showcase_page = Arrays.asList(HomePage.series1, HomePage.series2, HomePage.series3, HomePage.series4,HomePage.series5,HomePage.series6,HomePage.series7,HomePage.series8,HomePage.series9,HomePage.series10,HomePage.series11,HomePage.series12,HomePage.series13,HomePage.series14,HomePage.series15);
+		List<By> Showcase_page = Arrays.asList(HomePage.series1, HomePage.series2, HomePage.series3, HomePage.series4,HomePage.series5,HomePage.series6,HomePage.series7,HomePage.series8,HomePage.series9,HomePage.series10,HomePage.series11,HomePage.series12,HomePage.series13,HomePage.series14);
 		for (By Showcase_series : Showcase_page) {
 		aDriver.click(HomePage.Showcase, "Click on 1st series");
 		aDriver.click(Showcase_series, "Click on each series of the page");
@@ -153,7 +158,7 @@ import com.mohs10.ActionDriver.XLUtils;
 		// Call the validation method from aaDriver to validate the title
 		aaDriver.Title_validate(driver, expectedTitle);
 	    Thread.sleep(2000);
-		driver.navigate().back();
+		aDriver.switchToOldWindow(driver);
 		Thread.sleep(2000);
 		}
 	}

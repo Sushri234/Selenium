@@ -1,3 +1,5 @@
 com\mohs10\ActionDriver\Action.class
+com\mohs10\ActionDriver\Screenshot.class
 com\mohs10\ActionDriver\XLUtils.class
+com\mohs10\ActionDriver\Actionitem.class
 com\mohs10\base\StartBrowser.class
