@@ -11,7 +11,7 @@ public class THpage {
 	public static By email = By.xpath("//input[@id='ff_1_email']");
 	public static By titlearticle = By.xpath("//input[@id='ff_1_subject']");
 	public static By bulletpoints = By.xpath("//textarea[@id='ff_1_message']");
-	public static By submit = By.xpath("//button[@class='ff-btn ff-btn-submit ff-btn-lg ff_btn_style']");
+	public static By submit = By.xpath("//button[@class=\"ff-btn ff-btn-submit ff-btn-lg ff_btn_style\"]");
 	public static By conrfm = By.xpath("//*[@id=\"fluentform_1_success\"]");
 	
 //**************************************************************************************************//	

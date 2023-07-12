@@ -5,16 +5,12 @@
     <classes>
       <class name="com.mohs10.scripts.HomeTest">
         <methods>
-          <include name="Validate_Logo"/>
+          <include name="Authorreg"/>
           <include name="generateReport"/>
-          <include name="Showcase_seriesPage"/>
-          <include name="Validate_Email"/>
           <include name="beforeClass"/>
-          <include name="Validate_readlink"/>
-          <include name="Showcase_series"/>
-          <include name="Validate_Keyword"/>
           <include name="afterClass"/>
           <include name="methodName"/>
+          <include name="Authorval"/>
         </methods>
       </class> <!-- com.mohs10.scripts.HomeTest -->
     </classes>

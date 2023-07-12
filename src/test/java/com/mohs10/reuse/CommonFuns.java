@@ -15,6 +15,7 @@ import org.sikuli.script.Screen;
 
 import com.mohs10.base.StartBrowser;
 import com.mohs10.or.HomePage;
+import com.mohs10.or.THpage;
 import com.mohs10.ActionDriver.Action;
 import com.mohs10.ActionDriver.Actionitem;
 import com.mohs10.ActionDriver.XLUtils;
@@ -147,7 +148,7 @@ import com.mohs10.ActionDriver.XLUtils;
 		StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate title of the ShowCase series page");
 		aDriver.navigateToApplication(URL);
 
-		List<By> Showcase_page = Arrays.asList(HomePage.series1, HomePage.series2, HomePage.series3, HomePage.series4,HomePage.series5,HomePage.series6,HomePage.series7,HomePage.series8,HomePage.series9,HomePage.series10,HomePage.series11,HomePage.series12,HomePage.series13,HomePage.series14);
+		List<By> Showcase_page = Arrays.asList(HomePage.series1, HomePage.series2, HomePage.series3, HomePage.series4,HomePage.series5);
 		for (By Showcase_series : Showcase_page) {
 		aDriver.click(HomePage.Showcase, "Click on 1st series");
 		aDriver.click(Showcase_series, "Click on each series of the page");
@@ -199,8 +200,61 @@ import com.mohs10.ActionDriver.XLUtils;
         actions.moveByOffset(0, 0).click().perform();
         Thread.sleep(3000);
 	   }
-      }
-    }  
+	 }
+		
+		//************************************Author Validation *********************************************
+		public void Author(String Firstname, String Email, String title, String points, String URL) throws Exception
+		{
+			StartBrowser.childTest = StartBrowser.parentTest.createNode("Register in Author");
+			aDriver.navigateToApplication(URL);
+			aDriver.click(HomePage.author, " Author on Article");
+			aDriver.type(HomePage.firstname,Firstname, "First Name");
+			aDriver.type(HomePage.email, Email, "Enter email");
+			aDriver.type(HomePage.titlearticle, title, "Title of Article");
+			aDriver.type(HomePage.bulletpoints,points,"Few bullet points");
+			aDriver.click(HomePage.submit1, "Submit");
+					
+		}
+		
+		//************************************Author Validation with missing field******************************************//
+		
+		public void Authorvalidation(String Firstname, String title, String points, String URL) throws Exception
+		{
+			StartBrowser.childTest = StartBrowser.parentTest.createNode("validating in Author");
+			aDriver.navigateToApplication(URL);
+			aDriver.click(HomePage.author, " Author on Article");
+			aDriver.type(HomePage.firstname,Firstname, "First Name");
+			aDriver.type(HomePage.titlearticle, title, "Title of Article");
+			aDriver.type(HomePage.bulletpoints,points,"Few bullet points");
+			aDriver.click(HomePage.submit1, "Submit");
+		}
+		
+	//******************************************Article Validation**********************************************************//
+		public void NavigatetoArticles(String URL) throws Exception {
+	        StartBrowser.childTest = StartBrowser.parentTest.createNode("Validate title of the TAF articles");
+	        aDriver.navigateToApplication(URL);
+
+	         List<By>NavigatetoArticles = Arrays.asList(HomePage.article2,HomePage.article3,HomePage.article4,HomePage.article5,
+	        		 HomePage.article6,HomePage.article7,HomePage.article8,HomePage.article9,HomePage.article10);
+	        for (By article  : NavigatetoArticles) {
+	        aDriver.click(HomePage.article1, "Click on 1st article");
+	        aDriver.click(article, "Click on each article page");
+	        Thread.sleep(2000);
+	        // Get the Title of each pages
+	        String expectedTitle = aDriver.getTitle(driver);
+
+	        // Call the validation method from aaDriver to validate the title
+	        aaDriver.Title_validate(driver, expectedTitle);
+	        Thread.sleep(2000);
+	        driver.navigate().back();
+	        Thread.sleep(2000);
+	        }
+
+	    }
+      	
+	}
+	 
+     
 		 
 				   
 			    

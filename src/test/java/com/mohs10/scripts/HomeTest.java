@@ -3,13 +3,19 @@ package com.mohs10.scripts;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.mohs10.ActionDriver.Screenshot;
 import com.mohs10.ActionDriver.XLUtils;
 import com.mohs10.base.StartBrowser;
 import com.mohs10.reuse.CommonFuns;
+import com.mohs10.reuse.Tcfuns;
 
 	public class HomeTest extends StartBrowser{
 		String Excelfile="C:\\Users\\DELL\\eclipse-workspace\\Mohs10_TAF\\TestData\\Taf_data.xlsx";
 		String Sheet= "Sheet1";
+		
+		/*String excelfile = "C:\\Users\\DELL\\eclipse-workspace\\Mohs10_TAF\\TestData\\Data.xlsx";
+	    String excelsheet = "authorregs"; // Assuming the Excel sheet name is "Registration"
+	    String URL ="URL";*/
 	
 	//***********************Footer TestCases********************
 	@Test(priority = 0)
@@ -96,6 +102,58 @@ import com.mohs10.reuse.CommonFuns;
 	      cat.ShowCaseSeries_Youtube(URL,SC_URL);
 	      Thread.sleep(2000);
 	  }
-	 
+	   
+	   
+//	   @Test(priority=7)
+//	    public void Authorreg() throws Exception {
+//		   CommonFuns hm2 = new CommonFuns();
+//	        String url = XLUtils.getStringCellData(excelfile, URL,  1, 0);
+//	        String firstName = XLUtils.getStringCellData(excelfile, excelsheet, 1, 0);
+//	        String email = XLUtils.getStringCellData(excelfile, excelsheet, 1, 1);
+//	        String title = XLUtils.getStringCellData(excelfile, excelsheet, 1, 2);
+//	        String points = XLUtils.getStringCellData(excelfile, excelsheet, 1, 3);
+//
+//	        // Perform registration using retrieved data
+//	        hm2.Author(firstName, email, title, points,url);
+//
+//	        // Add any additional steps or assertions here
+//	        String expectedText ="Thank you for your message. We will get in touch with you shortly";
+//	        Assert.assertEquals("Thank you for your message. We will get in touch with you shortly",expectedText);
+//	        System.out.println("prompting proper message"+expectedText);
+//	        // Capture screenshot
+//	        Screenshot.SSReusablemethod(driver, "Author");
+//	        Thread.sleep(5000);
+//	    }
+//	    
+//	//*********************************************************************//
+//	    
+//	    @Test(priority=8)
+//	    public void Authorval() throws Exception {
+//	    	CommonFuns hm2 = new CommonFuns();
+//	        String url = XLUtils.getStringCellData(excelfile, URL,  1, 0);
+//	        String firstName = XLUtils.getStringCellData(excelfile, excelsheet, 1, 0);
+//	        String title = XLUtils.getStringCellData(excelfile, excelsheet, 1, 2);
+//	        String points = XLUtils.getStringCellData(excelfile, excelsheet, 1, 3);
+//
+//	        // Perform registration using retrieved data
+//	        hm2.Authorvalidation(firstName, title, points, url);
+//
+//	        // Add any additional steps or assertions here
+//	        String expectedText ="This field is required";
+//	        Assert.assertEquals("This field is required",expectedText);
+//	        System.out.println("prompting proper message"+expectedText);
+//	        // Capture screenshot
+//	        Screenshot.SSReusablemethod(driver, "Author validation");
+//	        Thread.sleep(5000);
+//	}
+//	//************************************************************************//
+//	    	@Test(priority=9)
+//	    	public void Articles() throws Exception{
+//	    		String url = XLUtils.getStringCellData(excelfile, URL,  1, 0);
+//	    		CommonFuns hm2= new CommonFuns();
+//	    		hm2.NavigatetoArticles(url);
+//	    		Thread.sleep(5000);
+//	    		
+//	    	}
 	
 }
